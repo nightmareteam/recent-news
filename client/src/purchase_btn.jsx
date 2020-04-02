@@ -1,5 +1,5 @@
 import React from 'react';
-const styled = window.styled
+import styled from 'styled-components';
 
 const Button = styled.div`
 	border-radius: 2px;

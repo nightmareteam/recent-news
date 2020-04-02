@@ -8,17 +8,6 @@ module.exports = {
 		filename: 'bundle.js',
 		path: DIST_DIR
 	},
-	externals: [
-    	{'styled-components': {
-      		commonjs: 'styled-components',
-      		commonjs2: 'styled-components',
-      		amd: 'styled-components'
-    	}},
-    	'pg', 
-    	'sqlite3', 
-    	'tedious', 
-    	'pg-hstore'
-  	],
   	node: {
     	fs: 'empty',
     	net: 'empty',
@@ -36,6 +25,6 @@ module.exports = {
 				}				
 			}
 		}]
-	}
-
+	},
+	devtool: 'inline-source-map'
 }
