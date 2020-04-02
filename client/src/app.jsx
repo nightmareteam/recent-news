@@ -2,7 +2,7 @@ import React from 'react';
 import View from './updates_view.jsx';
 import Checkout from './checkout_comp.jsx';
 import About from './about.jsx';
-const $ = require('jquery');
+import $ from 'jquery';
 
 class App extends React.Component {
 	constructor(props) {
