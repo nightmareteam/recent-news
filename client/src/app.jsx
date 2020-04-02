@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import View from './updates_view.jsx';
 import Checkout from './checkout_comp.jsx';
 import About from './about.jsx';
-const db = require('../../database');
 const $ = require('jquery');
 
 class App extends React.Component {
@@ -47,19 +45,6 @@ class App extends React.Component {
 				})
 			})
 	}
-
-	// handleClick() {
-	// 	$.get('http://localhost:3003/updates', (data) => {
-
-	// 		console.log('got data back!!', data);
-
-	// 		this.setState({
-	// 			updates: data
-	// 		})
-	// 	})
-
-	// 	console.log('mounted');
-	// }
 
 	toggleModal() {
 
