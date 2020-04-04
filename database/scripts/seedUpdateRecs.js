@@ -26,9 +26,9 @@ const writeUpdates = async () => {
             ]
             const csv = record.join(',') + '\n';
             if (!outFile.write(csv)) {
-                await new Promise((resolve => outFile.once('drain', () => {
-                    resolve();
-                })));
+                await new Promise((resolve) => {
+                    outFile.once('drain', resolve);
+                });
             };
         }
     }
