@@ -6,6 +6,9 @@ const outFile = fs.createWriteStream(
     path.resolve(__dirname, '..', 'data', 'updates.json')
 )
 
+/**
+ * Writes data as line delimited json documents (not proper json)
+ */
 const writeGameUpdates = async () => {
     for (let i = 0; i < 10000000; i++) {
         const gameUpdates = {
