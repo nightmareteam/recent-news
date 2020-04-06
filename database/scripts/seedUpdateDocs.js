@@ -23,7 +23,7 @@ const writeGameUpdates = async () => {
             const update = {
                 posted_by: faker.internet.userName(),
                 post_date: faker.date.past(),
-                tite: faker.lorem.sentence(4, false, 4),
+                title: faker.lorem.sentence(4, false, 4),
                 text: faker.lorem.paragraph(3, false, 5),
                 img: faker.image.abstract(),
                 comment_count: faker.random.number(),
