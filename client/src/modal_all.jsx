@@ -1,7 +1,7 @@
 // ok this is the modal component for each story
 // jk the state will be on app but changed via clicks on the modal and on the parent
 import React from 'react';
-const styled = window.styled
+import styled from 'styled-components';
 
 const Img = styled.img`
 	width: 98%;

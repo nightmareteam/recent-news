@@ -1,5 +1,5 @@
 import React from 'react';
-const styled = window.styled
+import styled from 'styled-components';
 import Updatemodal from './update_modal.jsx';
 
 const Post_date = styled.div`
