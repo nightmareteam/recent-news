@@ -1,4 +1,9 @@
-# Don't track content of these folders
+# Packages
 node_modules/
+
+# Compiled
 public/bundle.js
-data
+
+# Seed data
+updates.csv
+updates.json
