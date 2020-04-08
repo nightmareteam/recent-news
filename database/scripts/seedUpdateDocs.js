@@ -3,22 +3,18 @@ const fs = require('fs');
 const faker = require('faker');
 
 const outFile = fs.createWriteStream(
-    path.resolve(__dirname, '..', 'data', 'updatesIndexed.json')
+    path.resolve(__dirname, '..', 'data', 'updatesSample1.json')
 )
 
 /**
  * Writes data as line delimited json documents (not proper json)
  */
 const writeGameUpdates = async () => {
-
-    
     for (let i = 0; i < 10; i++) {
-        const gameUpdates = {
-            game_id: i,
-        };
+        const gameUpdates = [];
         // Random number of updates biased towards 0.
         const numUpdates = Math.floor(Math.pow(Math.random(), 2) * 20);
-        
+
         for (let j = 0; j < numUpdates; j++) {
             const update = {
                 posted_by: faker.internet.userName(),
@@ -29,9 +25,9 @@ const writeGameUpdates = async () => {
                 comment_count: faker.random.number(),
             }
 
-            gameUpdates[j] = update;
-            
+            gameUpdates.push(update);
         }
+
         const doc = JSON.stringify(gameUpdates) + '\n';
 
         if (!outFile.write(doc)) {
