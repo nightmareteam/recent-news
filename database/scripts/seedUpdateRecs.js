@@ -3,7 +3,7 @@ const fs = require('fs');
 const faker = require('faker');
 
 const outFile = fs.createWriteStream(
-    path.resolve(__dirname, 'data', 'updates.csv')
+    path.resolve(__dirname, '..', 'data', 'updates.csv')
 )
 
 // Write fields on first line
@@ -18,7 +18,7 @@ const writeUpdates = async () => {
             const record = [
                 i, // game_id
                 faker.internet.userName(), // posted_by
-                faker.date.past(), // post_date
+                faker.date.past().toISOString(), // post_date
                 '"' + faker.lorem.sentence(4, false, 4) + '"', // title
                 faker.lorem.paragraph(3, false, 5), // text 
                 faker.image.abstract(), // img
