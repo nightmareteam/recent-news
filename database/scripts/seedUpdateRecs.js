@@ -13,7 +13,7 @@ outFile.write('game_id, posted_by, post_date, title, text, img, comment_count\n'
 
 const writeUpdates = async () => {
     for (let i = 0; i < 10000000; i++) {
-        const updates = Math.floor(Math.random() * 10);
+        const updates = Math.floor(Math.pow(Math.random(), 2) * 20);
         for (let j = 0; j < updates; j++) {
             const record = [
                 i, // game_id
