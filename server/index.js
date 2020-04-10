@@ -6,7 +6,8 @@ const db = require('../database');
 
 app.get('/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
-	db.getUpdatesByGameId(Number(gameId))
+	const { page } = req.query;
+	db.getUpdatesByGameId(gameId, page)
 		.then(({rows}) => {
 			res.send(rows);
 		})
