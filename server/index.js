@@ -3,7 +3,7 @@ const db = require('../database');
 const app = express();
 const port = 3003;
 
-app.get('/:gameId/updates', (req, res) => {
+app.get('/api/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
 	const { page } = req.query;
 	db.getUpdatesByGameId(gameId, page)
