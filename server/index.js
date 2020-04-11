@@ -1,8 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const db = require('../database');
 const app = express();
 const port = 3003;
-const db = require('../database');
 
 app.get('/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
