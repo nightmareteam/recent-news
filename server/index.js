@@ -14,6 +14,8 @@ app.get('/api/recent-news/:gameId/updates', (req, res) => {
 		.catch()
 })
 
-app.listen(process.env.PORT || 3003, () => { 
-	console.log(`listening on port ${port}!`)
+const port = process.env.PORT || 3003
+
+app.listen(port, () => { 
+	console.log(`listening on port ${port}`)
 });
