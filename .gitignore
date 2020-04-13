@@ -11,3 +11,6 @@ updates.json
 
 # Environment
 .env
+
+# Diagnostics
+newrelic_agent.log
