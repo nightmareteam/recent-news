@@ -3,7 +3,6 @@ require('newrelic');
 const express = require('express');
 const db = require('../database');
 const app = express();
-const port = 3003;
 
 app.get('/api/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
@@ -15,4 +14,6 @@ app.get('/api/recent-news/:gameId/updates', (req, res) => {
 		.catch()
 })
 
-app.listen(port, () => { console.log(`listening on port ${port}!`)});
+app.listen(process.env.PORT || 3003, () => { 
+	console.log(`listening on port ${port}!`)
+});
