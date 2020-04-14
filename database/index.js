@@ -8,13 +8,13 @@ const pool = new Pool({
 	port: 5432
 });
 
-const getUpdatesByGameId = (gameId, page) => {
-    const query = 'SELECT * FROM updates WHERE game_id = $1 ORDER BY post_date OFFSET $2 LIMIT $3'
-	return pool
+const getUpdatesByGameId = (gameId, page) => (
+	pool
 		.query(
-            query,
-            [gameId, page * 5 || 0, page ? 5 : 2])
-}
+            'SELECT * FROM updates WHERE game_id = $1 ORDER BY post_date OFFSET $2 LIMIT $3',
+			[gameId, page * 5 || 0, page ? 5 : 2],
+		)
+);
 
 module.exports = {
 	getUpdatesByGameId,
