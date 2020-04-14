@@ -18,5 +18,4 @@ const getUpdatesByGameId = (gameId, page) => (
 
 module.exports = {
 	getUpdatesByGameId,
-	end: pool.end.bind(pool)
 }
