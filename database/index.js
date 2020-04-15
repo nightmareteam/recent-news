@@ -5,7 +5,7 @@ const pool = new Pool({
 	password: process.env.DB_PASS,
 	database: 'recent-news',
 	host: process.env.DB_DOMAIN,
-	port: 5432
+	port: 5432,
 });
 
 const getUpdatesByGameId = (gameId, page) => (

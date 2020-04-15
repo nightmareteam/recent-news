@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 require('dotenv').config();
 require('newrelic');
 const express = require('express');
@@ -11,7 +13,7 @@ app.get('/api/recent-news/:gameId/updates', (req, res) => {
 		.then(({rows}) => {
 			res.send(rows);
 		})
-		.catch()
+		.catch(console.log)
 })
 
 const port = process.env.PORT || 3003
