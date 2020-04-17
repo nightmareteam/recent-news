@@ -19,31 +19,18 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		const params = new URLSearchParams(window.location.search);
+		const gameId = params.get('gameId');
 
-		console.log('mounted');
-
-		$.get('http://localhost:3003/updates')
-			.done((data) => {
-
-				console.log('[app.jsx: 27] got updates data back!!');
-
-				this.setState({
-					updates: data
-				})
-			})
-			.done(() => {
-				$.get(`http://localhost:3003/games/${this.state.id}`)
+		if (gameId) {
+			$.get(`recent-news/${gameId}/updates`)
 				.done((data) => {
-
-					console.log('[app.jsx: 37] game got!', data);
-
+	
 					this.setState({
-						game: data[0],
-						platforms: data[0].platforms.split(' '),
-						vr_supprt: data[0].vr_support.split(' ')
-					})
-				})
-			})
+						updates: data
+					});
+				});
+		}
 	}
 
 	toggleModal() {
