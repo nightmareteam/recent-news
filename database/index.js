@@ -4,7 +4,7 @@ const pool = new Pool({
 	user: process.env.DB_USER,
 	password: process.env.DB_PASS,
 	database: 'recent-news',
-	host: process.env.DB_DOMAIN,
+	host: process.env.DB_HOST || 'localhost',
 	port: 5432
 });
 
