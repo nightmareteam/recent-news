@@ -1,8 +1,8 @@
-CREATE TABLE updates (
+CREATE TABLE updates_1 (
     game_id         integer NOT NULL,
-    posted_by       char(100),
-    post_date       char(100),
-    title           char(100),
+    posted_by       varchar(100),
+    post_date       timestamp,
+    title           varchar(100),
     text            text,
     img             text,
     comment_count   integer

@@ -8,3 +8,9 @@ public/bundle.js
 # Seed data
 updates.csv
 updates.json
+
+# Environment
+.env
+
+# Diagnostics
+newrelic_agent.log
