@@ -5,12 +5,39 @@
 
 ## Requirements
 
-- Node 6.13.0
+- node 6.13.0
+- postgres 12.2 community server
 
-### Installing Dependencies
+## Getting Started
+
+Install dependencies
 
 `npm install`
 
+Set up environment variables
+
+> Create a .env file
+
+```
+# Environment Variables ( [] indicates optional )
+
+[NEWRELIC_LICENSE]        # License to activate new relic performance logging
+[DB_HOST]                 # Host for Postgres database. Defaults to 'localhost'
+DB_USER                   # Postgres username
+DB_PASS                   # Postgres password
+[PORT]                    # Port for server to listen for requests. Defaults to 3003
+
+```
+
+Seed database if necessary
+
+> Generate CSV file
+
+`npm run seed`
+
+> import to Postgres with [psql client](https://www.postgresql.org/docs/12/app-psql.html)
+
+---
 ## Scripts
 
 `npm run seed`
@@ -24,6 +51,7 @@
 > Starts node.js server with nodemon.
 > <b> nodemon is not included in dependencies </b>
 
+---
 ## API Spec
 
 ### Get Updates by gameId
