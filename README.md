@@ -1,40 +1,53 @@
-# Steam Store
+# Vapor Recent News
 
-> Game detail page from the steam store
+> Game updates/news microservice
 
-## Related Projects
-
-  - https://github.com/parks-and-recursion/steam_addReviewsandModals
-  - https://github.com/parks-and-recursion/steam_content
-  - https://github.com/parks-and-recursion/steam_reviews
-  - https://github.com/parks-and-recursion/steam_display
-  - https://github.com/parks-and-recursion/steam_navbar_sidebar
-
-## Table of Contents
-
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-
-## Usage
-
-> Clone to local repo, run npm initialize to initialize my database schema, run npm seed to seed database, run npm start to start server, open browser to localhost:3003... Make sure database -u and -p match in seed script and that database names don't conflict or if using one db that the table names don't.
 
 ## Requirements
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
 - Node 6.13.0
-- etc
-
-## Development
 
 ### Installing Dependencies
 
-From within the root directory:
+`npm install`
 
-```sh
-npm install -g webpack
-npm install
-```
-# steam_recentNews
+## Scripts
+
+`npm run seed`
+> Creates a csv file with updates for 10,000,000 games
+> See sample csv file in database/data
+
+`npm run start`
+> Starts node.js server
+
+`npm run start-dev`
+> Starts node.js server with nodemon.
+> <b> nodemon is not included in dependencies </b>
+
+## API Spec
+
+### Get Updates by gameId
+
+`GET /recent-news/:gameId/updates`
+
+#### Parameters
+
+| Params | Type | Description |
+| --- | --- | --- |
+| :gameId | `Number` | The game's unique id
+| [page]  | `Number` | Page number (0 indexed, page length is 5)
+
+#### Response
+
+`GameUpdates[]`
+
+#### GameUpdates
+
+| Field | Type | Description |
+| --- | --- | --- |
+| posted_by | `String` | 
+| post_date | `Date` |
+| title | `String` | Title of the post
+| text | `String` | Text content of post
+| img | `String` | An image url
+| comment_count | `Number` | Number of comments on post

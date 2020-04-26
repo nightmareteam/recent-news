@@ -4,7 +4,7 @@ const express = require('express');
 const db = require('../database');
 const app = express();
 
-app.get('/api/recent-news/:gameId/updates', (req, res) => {
+app.get('/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
 	const { page } = req.query;
 	db.getUpdatesByGameId(gameId, page)
