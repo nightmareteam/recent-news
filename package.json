@@ -1,7 +1,7 @@
 {
-  "name": "steam_recentnews",
+  "name": "vapor_recentnews",
   "version": "1.0.0",
-  "description": "steam store emulation",
+  "description": "",
   "main": "index.js",
   "jest": {
     "setupFiles": [
@@ -10,15 +10,15 @@
   },
   "scripts": {
     "test": "jest",
-    "seed": "node seed.js",
-    "start": "nodemon server/index.js",
-    "react-dev": "webpack -d --watch"
+    "seed": "node database/scripts/seedUpdateRecs.js",
+    "start": "node server/index.js",
+    "start-dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Doughertyg/steam_recentNews.git"
   },
-  "author": "Graham Dougherty",
+  "author": "Jin Cai",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Doughertyg/steam_recentNews/issues"
