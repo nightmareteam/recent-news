@@ -14,16 +14,8 @@
     "start": "node server/index.js",
     "start-dev": "nodemon server/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Doughertyg/steam_recentNews.git"
-  },
   "author": "Jin Cai",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Doughertyg/steam_recentNews/issues"
-  },
-  "homepage": "https://github.com/Doughertyg/steam_recentNews#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
