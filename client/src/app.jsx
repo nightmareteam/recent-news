@@ -10,9 +10,6 @@ class App extends React.Component {
 			updates: [],
 			modalToggle: false,
 			id: 1,
-			game: {},
-			platforms: [],
-			vr_supprt: []
 		}
 	}
 
@@ -28,20 +25,7 @@ class App extends React.Component {
 				this.setState({
 					updates: data
 				})
-			})
-			.done(() => {
-				$.get(`http://localhost:3003/games/${this.state.id}`)
-				.done((data) => {
-
-					console.log('[app.jsx: 37] game got!', data);
-
-					this.setState({
-						game: data[0],
-						platforms: data[0].platforms.split(' '),
-						vr_supprt: data[0].vr_support.split(' ')
-					})
-				})
-			})
+			});
 	}
 
 	toggleModal() {
