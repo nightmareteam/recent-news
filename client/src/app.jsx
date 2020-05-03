@@ -1,6 +1,5 @@
 import React from 'react';
 import View from './updates_view.jsx';
-import Checkout from './checkout_comp.jsx';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -73,7 +72,6 @@ class App extends React.Component {
 			return (
 				
 				<div>
-					<Checkout platforms={this.state.platforms} title={this.state.game} vr={this.state.vr_supprt}/>
 					<View updates={this.state.updates} state={this.state} toggleModal={this.toggleModal.bind(this)} persistModal={this.persistModal.bind(this)} />
 				</div>				
 			)
