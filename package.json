@@ -12,7 +12,8 @@
     "test": "jest",
     "seed": "node database/scripts/seedUpdateRecs.js",
     "start": "node server/index.js",
-    "start-dev": "nodemon server/index.js"
+    "start-dev": "nodemon server/index.js",
+    "react-dev": "webpack --config ./webpack.config.dev.js -w"
   },
   "author": "Jin Cai",
   "license": "ISC",
