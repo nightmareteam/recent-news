@@ -1,4 +1,4 @@
-CREATE TABLE updates_1 (
+CREATE TABLE updates (
     game_id         integer NOT NULL,
     posted_by       varchar(100),
     post_date       timestamp,
