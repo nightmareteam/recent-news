@@ -5,9 +5,9 @@ const db = require('../database');
 const app = express();
 
 const allowedOrigins = [
-	'localhost:3000', // Proxy
-	'localhost:9000', // webpack-dev-server
-	'localhost:5500', // VsCode live-server
+	'http://127.0.0.1:3000', // Proxy
+	'http://127.0.0.1:9000', // webpack-dev-server
+	'http://127.0.0.1:5500', // VsCode live-server
 ]
 
 app.use('/', function (req, res, next) {
