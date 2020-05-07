@@ -2,8 +2,8 @@
 // jk the state will be on app but changed via clicks on the modal and on the parent
 import React from 'react';
 import styled from 'styled-components';
-import Modal_all from './modal_all.jsx';
-import Pages from './page_nav.jsx';
+import Modal_all from './modal_all';
+import Pages from './page_nav';
 
 const Overlay = styled.div`
 	position: fixed;

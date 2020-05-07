@@ -1,7 +1,7 @@
 import React from 'react';
-import Update from './update.jsx';
+import Update from './update';
 import styled from 'styled-components';
-import UpdatesModalAll from './updates_all.jsx';
+import UpdatesModalAll from './updates_all';
 
 const Background = styled.div`
 	font-family: "Motiva Sans", Sans-Serif;

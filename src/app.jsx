@@ -1,5 +1,5 @@
 import React from 'react';
-import View from './updates_view.jsx';
+import View from './updates_view';
 import $ from 'jquery';
 
 class App extends React.Component {

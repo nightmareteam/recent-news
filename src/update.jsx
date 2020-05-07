@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Updatemodal from './update_modal.jsx';
+import Updatemodal from './update_modal';
 
 const Post_date = styled.div`
 	color: #56707F;
