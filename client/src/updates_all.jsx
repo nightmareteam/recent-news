@@ -82,7 +82,6 @@ class UpdatesModalAll extends React.Component {
 	}
 
 	handlePageChange(page, length) {
-		console.log('clicked!');
 
 		if (page > length / 5 || page < 1) {
 			return;

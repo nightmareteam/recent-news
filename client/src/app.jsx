@@ -14,14 +14,8 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
-
-		console.log('mounted');
-
 		$.get('http://localhost:3003/updates')
 			.done((data) => {
-
-				console.log('[app.jsx: 27] got updates data back!!');
-
 				this.setState({
 					updates: data
 				})
@@ -44,8 +38,6 @@ class App extends React.Component {
 
 		//first check if state updates is an empty array
 		if (this.state.updates.length === 0 ) {
-			console.log('state updates is empty', this.state.updates); //do something useful with this
-
 			return (
 
 				<h1>See it here</h1>
