@@ -1,8 +1,9 @@
-require('dotenv').config();
-require('newrelic');
+import dotenv from 'dotenv';
+import express from 'express';
+import { getUpdatesByGameId } from './database';
 
-const express = require('express');
-const db = require('./database');
+dotenv.config();
+
 const app = express();
 
 const allowedOrigins = [
@@ -23,7 +24,7 @@ app.use('/', function (req, res, next) {
 app.get('/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
 	const { page } = req.query;
-	db.getUpdatesByGameId(gameId, page)
+	getUpdatesByGameId(gameId, page)
 		.then(({rows}) => {
 			res.send(rows);
 		})

@@ -1,4 +1,4 @@
-const { Pool } = require('pg');
+import { Pool } from 'pg';
 
 const pool = new Pool({
 	user: process.env.DB_USER,
@@ -8,14 +8,10 @@ const pool = new Pool({
 	port: 5432,
 });
 
-const getUpdatesByGameId = (gameId, page) => (
+export const getUpdatesByGameId = (gameId, page) => (
 	pool
 		.query(
             'SELECT * FROM updates WHERE game_id = $1 ORDER BY post_date OFFSET $2 LIMIT $3',
 			[gameId, page * 5 || 0, page ? 5 : 2],
 		)
 );
-
-module.exports = {
-	getUpdatesByGameId,
-}

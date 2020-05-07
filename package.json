@@ -10,9 +10,10 @@
   },
   "scripts": {
     "test": "jest",
-    "seed": "node database/scripts/seedUpdateRecs.js",
-    "start": "node server/index.js",
-    "start-dev": "nodemon server/index.js",
+    "seed": "node functions/database/scripts/seedUpdateRecs.js",
+    "start": "node functions/index.js",
+    "start-dev": "nodemon functions/index.js",
+    "babel": "babel server -d functions",
     "react-dev": "webpack --config ./webpack.config.dev.js -w"
   },
   "author": "Jin Cai",
