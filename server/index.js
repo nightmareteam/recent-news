@@ -1,7 +1,8 @@
 require('dotenv').config();
 require('newrelic');
+
 const express = require('express');
-const db = require('../database');
+const db = require('./database');
 const app = express();
 
 const allowedOrigins = [
