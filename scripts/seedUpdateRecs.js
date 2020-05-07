@@ -3,7 +3,7 @@ const fs = require('fs');
 const faker = require('faker');
 
 const outFile = fs.createWriteStream(
-    path.resolve(__dirname, '..', 'data', 'updates.csv')
+    path.resolve(__dirname, '..', 'server', 'database', 'data', 'updates.csv')
 )
 
 // Write fields on first line
