@@ -11,9 +11,9 @@
   "scripts": {
     "test": "jest",
     "seed": "node functions/database/scripts/seedUpdateRecs.js",
-    "start": "node functions/index.js",
+    "start": "node functions/server/index.js",
     "start-dev": "nodemon functions/index.js",
-    "babel": "babel server -d functions",
+    "babel": "babel src -d functions/src && babel server -d functions/server",
     "react-dev": "webpack --config ./webpack.config.dev.js -w"
   },
   "author": "Jin Cai",
