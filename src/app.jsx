@@ -1,25 +1,14 @@
 import React from 'react';
 import View from './updates_view';
-import $ from 'jquery';
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			updates: [],
 			modalToggle: false,
 			id: 1,
 		}
-	}
-
-	componentDidMount() {
-		$.get('http://localhost:3003/updates')
-			.done((data) => {
-				this.setState({
-					updates: data
-				})
-			});
 	}
 
 	toggleModal() {
@@ -37,7 +26,7 @@ class App extends React.Component {
 	render() {
 
 		//first check if state updates is an empty array
-		if (this.state.updates.length === 0 ) {
+		if (this.props.updates.length === 0 ) {
 			return (
 
 				<h1>See it here</h1>
