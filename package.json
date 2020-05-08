@@ -12,9 +12,11 @@
     "test": "jest",
     "seed": "node scripts/seedUpdateRecs.js",
     "start": "node functions/server/index.js",
-    "start-dev": "nodemon functions/index.js",
-    "babel": "babel src -d functions/src && babel server -d functions/server",
-    "react-dev": "webpack --config ./webpack.config.dev.js -w"
+    "start-dev": "nodemon functions/server/index.js",
+    "babel-client": "babel src -d functions/src -w",
+    "babel-server": "babel server -d functions/server -w",
+    "react-dev": "webpack --config ./webpack.config.dev.js -w",
+    "dev": "concurrently \"npm:start-dev\" \"npm:babel-client\" \"npm:babel-server\""
   },
   "author": "Jin Cai",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "@babel/preset-env": "^7.9.0",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "concurrently": "^5.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "webpack": "^4.42.1",
