@@ -35,8 +35,6 @@ const imgSwitch = (props) => {
 	let toggle = Math.random();
 
 	if (toggle > 0.5) {
-		console.log(props.story.img);
-
 		return props.story.img;
 	} else {
 		return "";
@@ -99,7 +97,7 @@ class Update extends React.Component {
 	}
 
 	render() {
-
+		console.log(this.props);
 		return (
 
 		
@@ -107,7 +105,7 @@ class Update extends React.Component {
 				<Updatemodal story={this.props.story} state={this.state} persistModal={this.persistModal.bind(this)} hideModal={this.toggleModal.bind(this)} />
 				<Update_container>
 					<Post_date>
-						<span>{this.props.story.post_date}</span>
+						<span>{this.props.story.post_date.toString()}</span>
 					</Post_date>
 					<Title>
 						<span>{this.props.story.title}</span>
