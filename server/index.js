@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express from 'express';
+import ssr from './utils/ssr';
 import { getUpdatesByGameId } from './database';
 
 dotenv.config();
@@ -20,6 +21,17 @@ app.use('/', function (req, res, next) {
 	next();
 });
 
+app.get('recent-news/:gameId', (req, res) => {
+	getUpdatesByGameId(gameId)
+	.then(({rows}) => {
+		res.send(ssr(rows))
+	})
+	.catch((err) => {
+		console.log(err);
+		res.status(500).send('Error getting game updates');
+	});
+});
+
 
 app.get('/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
@@ -28,7 +40,10 @@ app.get('/recent-news/:gameId/updates', (req, res) => {
 		.then(({rows}) => {
 			res.send(rows);
 		})
-		.catch()
+		.catch((err) => {
+			console.log(err);
+			res.status(500).send('Error getting game updates');
+		});
 })
 
 const port = process.env.PORT || 3003
