@@ -48,7 +48,7 @@ class App extends React.Component {
 			return (
 				
 				<div>
-					<View updates={this.state.updates} state={this.state} toggleModal={this.toggleModal.bind(this)} persistModal={this.persistModal.bind(this)} />
+					<View updates={this.props.updates} modal={this.state.modalToggle} toggleModal={this.toggleModal.bind(this)} persistModal={this.persistModal.bind(this)} />
 				</div>				
 			)
 		}

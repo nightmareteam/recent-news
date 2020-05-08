@@ -99,7 +99,7 @@ class UpdatesModalAll extends React.Component {
 
 	render() {
 
-		if (!this.props.state.modalToggle) {
+		if (!this.props.modal) {
 			return null;
 		} 
 

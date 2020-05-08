@@ -50,7 +50,7 @@ const View = (props) => (
 
 	<div className="view">
 		<Background>
-			<UpdatesModalAll state={props.state} updates={props.updates} persisModal={props.persisModal} hideModal={props.toggleModal} />
+			<UpdatesModalAll modal={props.modal} updates={props.updates} persisModal={props.persisModal} hideModal={props.toggleModal} />
 			<Header>
 				RECENT UPDATES
 				<Button onClick={props.toggleModal}>
