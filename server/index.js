@@ -21,17 +21,20 @@ app.use('/', function (req, res, next) {
 	next();
 });
 
-app.get('recent-news/:gameId', (req, res) => {
+app.get('/recent-news/:gameId', (req, res) => {
+	const { gameId } = req.params;
 	getUpdatesByGameId(gameId)
-	.then(({rows}) => {
-		res.send(ssr(rows))
-	})
-	.catch((err) => {
-		console.log(err);
-		res.status(500).send('Error getting game updates');
-	});
+		.then(({rows}) => {
+			res.send({
+				rendered: ssr(rows),
+				updates: rows,
+			})
+		})
+		.catch((err) => {
+			console.log(err);
+			res.status(500).send('Error getting game updates');
+		});
 });
-
 
 app.get('/recent-news/:gameId/updates', (req, res) => {
 	const { gameId } = req.params;
