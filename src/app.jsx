@@ -35,7 +35,7 @@ class App extends React.Component {
 		} else { //state updates is not empty and thus can be acted on
 
 			return (
-				
+
 				<div>
 					<View updates={this.props.updates} modal={this.state.modalToggle} toggleModal={this.toggleModal.bind(this)} persistModal={this.persistModal.bind(this)} />
 				</div>				
